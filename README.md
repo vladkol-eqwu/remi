@@ -13,9 +13,9 @@ Remi is a GUI library for Python applications that gets rendered in web browsers
 This allows you to access your interface locally and remotely.
 </p>
 
+
 Proud to be sponsored by
 ===
-
 <p align="center">
 <a href="https://www.simracingstudio.com/" style="font-size:25px" >
 <img src="https://static.wixstatic.com/media/092827_44a73f6751144b85af49c280304c9f25~mv2.png/v1/crop/x_0,y_37,w_4349,h_2313/fill/w_155,h_83,al_c,q_85,usm_0.66_1.00_0.01/srs-logo-whitebackground-slogan.webp" width="250">
@@ -29,10 +29,10 @@ Proud to be sponsored by
 
 Do you need support?
 ===
-
 <p align="center">
 <a href="https://www.reddit.com/r/RemiGUI" style="font-size:25px">Reddit - (subreddit RemiGUI)</a>
 </p>
+
 
 There is also a **drag n drop GUI Editor**. Look at the [Editor](https://github.com/rawpython/remi/tree/master/editor) subfolder to download your copy.
 
@@ -40,11 +40,10 @@ There is also a **drag n drop GUI Editor**. Look at the [Editor](https://github.
 
 <p align="center">
 
+
 Getting Started
 ===
-
 For a **stable** version:
-
 ```
 pip install remi
 ```
@@ -54,22 +53,20 @@ For the most updated **experimental** version [Download](https://github.com/rawp
 ```
 python setup.py install
 ```
-
 or install directly using pip
 
 ```
 pip install git+https://github.com/rawpython/remi.git
 ```
 
-Then start the test script (download it from github <https://github.com/rawpython/remi/blob/master/examples/widgets_overview_app.py>):
-
+Then start the test script (download it from github https://github.com/rawpython/remi/blob/master/examples/widgets_overview_app.py):
 ```
 python widgets_overview_app.py
 ```
 
+
 Remi
 ===
-
 Platform independent Python GUI library. In less than 100 Kbytes of source code, perfect for your diet.
 
 <p align="center">
@@ -118,9 +115,9 @@ You can change the URL address by specific **kwargs at `start` function call. Th
 Tested on Android, Linux, Windows.
 Useful on Raspberry Pi for Python script development. It allows interacting with your Raspberry Pi remotely from your mobile device.
 
+
 FAQ
 ===
-
 - **Why another GUI lib?**
 Kivy, PyQT, and PyGObject all require native code for the host operating system, which means installing or compiling large dependencies. Remi needs only a web browser to show your GUI.
 
@@ -133,9 +130,9 @@ For sure! Remi is released under the Apache License. See the ``LICENSE`` file fo
 - **Do I need some kind of web server?**
 No, it's included.
 
+
 Brief tutorial
 ===
-
 Import Remi library and some other useful stuff.
 
 ```py
@@ -173,7 +170,6 @@ start(MyApp, address='127.0.0.1', port=8081, multiple_instance=False, enable_fil
 ```
 
 Parameters:
-
 - address: network interface IP
 - port: listen port
 - multiple_instance: boolean, if True multiple clients that connect to your script has different App instances (identified by unique cookie session identifier)
@@ -183,7 +179,6 @@ Parameters:
 - standalone: boolean, indicates where to run the application as a standard Desktop application with its own window. If False, the interface is shown in a browser webpage.
 
 Additional Parameters:
-
 - username: for a basic HTTP authentication
 - password: for a basic HTTP authentication
 - certfile: SSL certificate filename
@@ -194,13 +189,12 @@ user will be opening the app with. If so, the JavaScript code will use hostname 
 This parameter is `False` by default.
 
 All widgets constructors accept two standards **kwargs that are:
-
 - width: can be expressed as int (and is interpreted as a pixel) or as str (and you can specify the measuring unit like '10%')
 - height: can be expressed as int (and is interpreted as a pixel) or as str (and you can specify the measuring unit like '10%')
 
+
 Events and callbacks
 ===
-
 Widgets expose a set of events that happen during user interaction.
 Such events are a convenient way to define the application behavior.
 Each widget has its own callbacks, depending on the type of user interaction it allows.
@@ -246,6 +240,7 @@ Simple, easy.
 
 Listener's callbacks will receive the emitter's instance firstly, then all other parameters provided by the specific event.
 
+
 Besides the standard event registration (as aforementioned), it is possible to pass user parameters to listener functions. This can be achieves appending parameters to the *do* function call.
 
 ```py
@@ -285,9 +280,9 @@ start(MyApp)
 
 This allows great flexibility, getting different behaviors with the same event listener definition.
 
+
 HTML Attribute accessibility
 ===
-
 Sometimes it is required to access Widget's HTML representation in order to manipulate HTML attributes.
 The library allows accessing this information easily.
 
@@ -307,20 +302,18 @@ The style attributes can be altered in this way:
 
 The assignment of a new attribute automatically creates it.
 
-For a reference list of HTML attributes, you can refer to <https://www.w3schools.com/tags/ref_attributes.asp>
+For a reference list of HTML attributes, you can refer to https://www.w3schools.com/tags/ref_attributes.asp
 
-For a reference list of style attributes, you can refer to <https://www.w3schools.com/cssref/default.asp>
+For a reference list of style attributes, you can refer to https://www.w3schools.com/cssref/default.asp
 
 Take care about internally used attributes. These are:
-
 - **class**: It is used to store the Widget class name for styling purpose
 - **id**: It is used to store the instance id of the widget for callback management
 
+
 Remote access
 ===
-
 If you are using your REMI app remotely, with a DNS and behind a firewall, you can specify special parameters in the `start` call:
-
 - **port**: HTTP server port. Don't forget to NAT this port on your router;
 - **dynamic_web_address**: `True` if the JavaScript code should use the actual URL's host and port
 for connecting back to the app, instead of provided IP address. This parameter is `False` by default.
@@ -329,9 +322,9 @@ for connecting back to the app, instead of provided IP address. This parameter i
 start(MyApp, address='0.0.0.0', port=8081, dynamic_web_address=True)
 ```
 
+
 Standalone Execution
 ===
-
 I suggest using the browser as a standard interface window.
 
 However, you can avoid using the browser.
@@ -340,22 +333,20 @@ Here is an example about this [standalone_app.py](https://github.com/rawpython/r
 
 **Be aware that PyWebView uses qt, gtk and so on to create the window. An outdated version of these libraries can cause UI problems. If you experience UI issues, update these libraries, or better avoid standalone execution.**
 
+
 Authentication
 ===
-
 In order to limit remote access to your interface, you can define a username and password. It consists of a simple authentication process.
 Just define the parameters **username** and **password** in the start call:
-
 ```py
 start(MyApp, username='myusername', password='mypassword')
 ```
 
+
 Styling
 ===
-
 In order to define a new style for your app, you have to do the following.
 Create a *res* folder and pass it to your App class constructor:
-
 ```python
 class MyApp(App):
     def __init__(self, *args):
@@ -366,22 +357,22 @@ class MyApp(App):
 Copy the standard style.css file from the remi folder and paste it inside your *res* folder. Edit it in order to customize.
 This way the standard *style.css* file gets overridden by the one you created.
 
+
 Compatibility
 ===
-
 Remi is made to be compatible from Python2.7 to Python3.X. Please notify compatibility issues.
+
 
 Security
 ===
-
 Remi should be intended as a standard desktop GUI framework.
 The library itself doesn't implement security strategies, and so it is advised to not expose its access to unsafe public networks.
 
 When loading data from external sources, consider protecting the application from potential javascript injection before displaying the content directly.
 
+
 Projects using Remi
 ===
-
 [PySimpleGUI](https://github.com/PySimpleGUI/PySimpleGUI): Launched in 2018 Actively developed and supported. Supports tkinter, Qt, WxPython, Remi (in browser). Create custom layout GUI's simply. Python 2.7 & 3 Support. 100+ Demo programs & Cookbook for rapid start. Extensive documentation.
 
 [App Template For REMI](https://github.com/cheak1974/remi-app-template): A really well written template for multiview applications.
@@ -402,7 +393,5 @@ Projects using Remi
 
 Other Implementations
 ===
-
 Listed here are other implementations of this library:
-
 - [**cremi**](https://github.com/cyberpro4/cremi): (WIP) developed for your C++ projects by [Claudio Cannatà](https://github.com/cyberpro4).
